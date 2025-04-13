@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="../CSS/main/global.css">    
     <link rel="stylesheet" href="../CSS/main/main.css">
     <link rel="stylesheet" href="../CSS/main/navbar-footer/navbar.css">
+    <link rel="stylesheet" href="../CSS/main/code.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
     <link rel="stylesheet" href="../CSS/main/code-editor.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Firebase SDK - Using compatibility version for better module/non-module compatibility -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <script>
@@ -35,6 +35,9 @@
     <clampy-navbar></clampy-navbar>
     
     <main class="code-editor-container room-code-editor">
+        <div class="prompt-container">
+            <span>Try to: </span><span id="prompt"></span>
+        </div>
         <div class="editors-pane">
             <div class="editor-container">
                 <div class="editor-header">
