@@ -73,7 +73,11 @@ body, html {
     line-height: 1.5;
     transition: all 0.3s ease;
 }
-
+.power{
+    color: #fff;
+    font-size: 13px;
+    margin-top: 10px;
+}
 /* Button states */
 .button:disabled {
     opacity: 0.6;

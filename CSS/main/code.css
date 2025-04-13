@@ -1,3 +1,13 @@
 .prompt-container{
     padding: 20px;
 }
+
+.submit-button-container{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.submit-button-container button{
+    font-size: 20px;
+}

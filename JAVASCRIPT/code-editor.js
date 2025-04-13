@@ -34,7 +34,7 @@ function initializeCodeEditor() {
         lineNumbers: true,
         autoCloseTags: true,
         lineWrapping: true,
-        value: ''  // Start with empty editor for room collaboration
+        value: ''
     });
 
     // Create CSS Editor with empty starting value for room collaboration
@@ -44,7 +44,7 @@ function initializeCodeEditor() {
         lineNumbers: true,
         autoCloseBrackets: true,
         lineWrapping: true,
-        value: ''  // Start with empty editor for room collaboration
+        value: ''
     });
 
     // Create JS Editor with empty starting value for room collaboration
@@ -54,13 +54,12 @@ function initializeCodeEditor() {
         lineNumbers: true,
         autoCloseBrackets: true,
         lineWrapping: true,
-        value: ''  // Start with empty editor for room collaboration
+        value: ''
     });
 
     const consoleOutput = document.querySelector('#console-output');
     const clearConsoleBtn = document.querySelector('#clear-console-btn');
 
-    // Clear console button functionality
     if (clearConsoleBtn) {
         clearConsoleBtn.addEventListener('click', () => {
             if (consoleOutput) {
@@ -69,23 +68,17 @@ function initializeCodeEditor() {
         });
     }
 
-    // Handle messages from the iframe (console logs)
     window.addEventListener('message', function (event) {
-        // Check if the message is from our console interceptor
         if (event.data && event.data.source === 'clampy-console') {
             const message = event.data.message;
 
-            // If we have a console output element
             if (consoleOutput) {
-                // Create a new log entry
                 const logEntry = document.createElement('div');
                 logEntry.className = `console-${message.type}`;
 
-                // Format the content
                 const content = message.content.join(' ');
                 logEntry.textContent = content;
 
-                // Add timestamp
                 const timestamp = new Date().toLocaleTimeString();
                 const timestampSpan = document.createElement('span');
                 timestampSpan.className = 'console-timestamp';

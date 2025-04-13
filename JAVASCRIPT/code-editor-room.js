@@ -245,3 +245,40 @@ function updateRoomStatus(message) {
         roomInfo.textContent = message;
     }
 }
+
+/**
+ * Retrieves the HTML, CSS, and JavaScript code content for a specified room
+ * @param {string} roomId - The ID of the room to get code from
+ * @returns {Promise<Object>} An object containing the room's html, css, and js code
+ */
+export async function getRoomCodeContent(roomId) {
+    // If no roomId is provided, return null
+    if (!roomId) {
+        console.error("No room ID provided to getRoomCodeContent");
+        return null;
+    }
+    
+    try {
+        // Get the room code using the existing getRoomCode function
+        const roomCode = await getRoomCode(roomId);
+        
+        // If roomCode is null or empty, return default empty values
+        if (!roomCode) {
+            return {
+                html: '',
+                css: '',
+                js: ''
+            };
+        }
+        
+        // Return the code content
+        return {
+            html: roomCode.html || '',
+            css: roomCode.css || '',
+            js: roomCode.js || ''
+        };
+    } catch (error) {
+        console.error(`Error retrieving code for room ${roomId}:`, error);
+        throw error;
+    }
+}

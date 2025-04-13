@@ -84,7 +84,17 @@
             <div id="console-output" class="console-output"></div>
         </div>
     </main>
-
+    <div class="ai-container">
+        <input type="text" id="promptInput" placeholder="Ask me anything...">
+        <button id="more" class="button" onclick="askAI(document.getElementById('promptInput').value)">Ask AI</button>
+        <div id="response"></div>
+        <p class="power">E by Gemini</p>
+    </div>
+    <script type="module">
+        import { GoogleGenerativeAI } from 'https://cdn.skypack.dev/@google/generative-ai';
+        window.GoogleGenerativeAI = GoogleGenerativeAI;
+    </script>
+    
     <!-- Load custom elements -->
     <script type="module" src="../JAVASCRIPT/custom-elements.js"></script>
     <script type="module" src="../JAVASCRIPT/auth-utils.js"></script>
@@ -97,6 +107,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closetag.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
     
+
+    <script src="../JAVASCRIPT/ai.js"></script>
+
     <!-- Load room-functions.js for room functionality -->
     <script src="../JAVASCRIPT/room-functions.js"></script>
     
