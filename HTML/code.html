@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clampy Team Code Editor</title>
+    <link rel="stylesheet" href="../CSS/main/global.css">    
+    <link rel="stylesheet" href="../CSS/main/main.css">
+    <link rel="stylesheet" href="../CSS/main/navbar-footer/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
+    <link rel="stylesheet" href="../CSS/main/code-editor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK - Using compatibility version for better module/non-module compatibility -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script>
+        // Initialize Firebase in compatibility mode for global access
+        const firebaseConfig = {
+            apiKey: "AIzaSyB4U13Kf-PP--im4SI0TER656-jPMS9iQ0",
+            authDomain: "clampy-b04e2.firebaseapp.com",
+            databaseURL: "https://clampy-b04e2-default-rtdb.firebaseio.com",
+            projectId: "clampy-b04e2",
+            storageBucket: "clampy-b04e2.firebasestorage.app",
+            messagingSenderId: "77812734289",
+            appId: "1:77812734289:web:f35835e2d88de31e45db70",
+            measurementId: "G-28MJKFRFS1"
+        };
+        firebase.initializeApp(firebaseConfig);
+        console.log("Firebase initialized in compatibility mode");
+    </script>
+</head>
+<body>
+    <clampy-navbar></clampy-navbar>
+    
+    <main class="code-editor-container room-code-editor">
+        <div class="editors-pane">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <span>HTML</span>
+                    <div class="room-status">
+                        <span id="room-info">Connecting...</span>
+                    </div>
+                </div>
+                <div id="html-editor"></div>
+                <div class="resize-handle-horizontal" data-resize="horizontal"></div>
+            </div>
+            
+            <div class="editor-container">
+                <div class="editor-header">
+                    <span>CSS</span>
+                </div>
+                <div id="css-editor"></div>
+                <div class="resize-handle-horizontal" data-resize="horizontal"></div>
+            </div>
+            
+            <div class="editor-container">
+                <div class="editor-header">
+                    <span>JavaScript</span>
+                </div>
+                <div id="js-editor"></div>
+            </div>
+
+            <div class="resize-handle-vertical" data-resize="editors-pane-height"></div>
+        </div>
+        
+        <div class="preview-pane">
+            <iframe id="preview-frame" sandbox="allow-scripts allow-modals allow-forms allow-same-origin" frameborder="0"></iframe>
+            <div class="resize-handle-vertical" data-resize="preview-pane-height"></div>
+        </div>
+        
+        <div id="console-container" class="console-container">
+            <div class="console-header">
+                <span>Console</span>
+                <div class="console-buttons">
+                    <button id="clear-console-btn" title="Clear Console">Clear</button>
+                    <button id="console-toggle-btn" title="Toggle Console">Hide Console</button>
+                </div>
+            </div>
+            <div id="console-output" class="console-output"></div>
+        </div>
+    </main>
+
+    <!-- Load custom elements -->
+    <script type="module" src="../JAVASCRIPT/custom-elements.js"></script>
+    <script type="module" src="../JAVASCRIPT/auth-utils.js"></script>
+
+    <!-- Load CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closetag.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    
+    <!-- Load room-functions.js for room functionality -->
+    <script src="../JAVASCRIPT/room-functions.js"></script>
+    
+    <!-- Load our editor scripts -->
+    <script type="module" src="../JAVASCRIPT/code-editor.js"></script>
+    <script type="module" src="../JAVASCRIPT/room-functions.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/main/global.css">
+    <link rel="stylesheet" href="../CSS/main/main.css">
+    <link rel="stylesheet" href="../CSS/main/navbar-footer/navbar.css">
+    <link rel="stylesheet" href="../CSS/main/animations.css">
+    <link rel="stylesheet" href="../CSS/main/login-signup/auth.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="brand-name">
+            <span class="brand-logo gradient-text">&lt;/<span class="brand-text"><a href="./">Clampy</a></span>&gt;</span>
+        </div>
+    </div>
+
+    <div class="login-content-container">
+        <div class="login-ui-container">
+            <div class="login-ui">
+                <div class="section-header login-ui-title">
+                    Log in
+                </div>
+                <div class="login-ui-form">
+                    <div class="login-ui-form-inputs-container">
+                        <input class="login-ui-form-input email" type="text" id="loginUiFormUserEmail"
+                            placeholder="Email">
+                        <div class="password-input-container">
+                            <input class="login-ui-form-input password-input" type="password"
+                                id="loginUiFormUserPassword" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="login-ui-form-submit-button-container">
+                        <button class="login-ui-form-submit-button" id="loginUiFormSubmitButton">Log in</button>
+                    </div>
+                </div>
+                <div class="signup-ui-form-login-link">
+                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../JAVASCRIPT/auth-utils.js"></script>
+    <script type="module" src="../JAVASCRIPT/login.js"></script>
+</body>
+
+</html>

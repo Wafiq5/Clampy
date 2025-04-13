@@ -1,0 +1,223 @@
+.blinking-cursor{
+    display: inline;
+}
+.blinking-cursor::after {
+    content: "_";
+    animation: cursor_blink 1s infinite;
+    color: var(--text-color);
+}
+.paragraph{
+    font-size: 18px;
+}
+a{
+    color: var(--text-color);
+    transition: all .3s ease-in-out;
+}
+a:active{
+    opacity: .7;
+}
+.section-gap{
+    width: 100%;
+    height: 30vh;
+}
+.section-container{
+    position: relative;
+    height: max-content;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(85deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    border-radius: 20px;
+    opacity: .5;
+}
+.fa-brands{
+    color: var(--text-color);
+    transition: all .3s ease-in-out;
+}
+.fa-brands:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+.gradient-text {
+    color: transparent;
+    background-image: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    background-clip: text;
+    opacity: 0.75;
+    -webkit-background-clip: text;
+    font-weight: 600;
+    transition: background-image 0.3s ease;
+    cursor: pointer;
+}
+.section-header{
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 500;
+}
+.grid-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(100, 1fr);
+    gap: 0;
+    background: transparent;
+    filter: blur(1px);
+    opacity: .1;
+}
+
+.grid-left::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, var(--gradient-start) 1px, transparent 1px),
+    linear-gradient(180deg, var(--gradient-end) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.grid-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 500px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(100, 1fr);
+    gap: 0;
+    background: transparent;
+    filter: blur(1px);
+    opacity: .1;
+}
+
+.grid-right::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, var(--gradient-start) 1px, transparent 1px),
+    linear-gradient(180deg, var(--gradient-end) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.button {
+    color: var(--text-color);
+    transition: all .2s ease;
+    cursor: pointer;
+    width: max-content;
+    background: transparent;
+    border: none;
+}
+
+.button {
+    color: var(--text-color);
+    transition: all .2s ease;
+    cursor: pointer;
+    width: max-content;
+    background: transparent;
+    border: none;
+}
+
+.button::before {
+    content: "{ ";
+    font-size: inherit;
+    color: inherit;
+}
+
+.button::after {
+    content: " }";
+    font-size: inherit;
+    color: inherit;
+}
+
+.button:hover::before,
+.button:hover::after {
+    background-image: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.75;
+    font-weight: 600;
+    transition: background-image 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.button:active{
+    color: var(--paragraph-color);
+}
+
+.button:active::before,
+.button:active::after {
+    opacity: .5;
+}
+.button a{
+    text-decoration: none;
+    color: inherit;
+}
+.button a:visited{
+    color: inherit;
+}
+.button:focus {
+    display: none;
+}
+.button-2{
+    color: var(--text-color);
+    transition: all .2s ease;
+    cursor: pointer;
+    width: max-content;
+    background: transparent;
+    border: none;
+}
+
+.link-copied-confirmation{
+    position: fixed;
+    z-index: 100000;
+    bottom: 0;
+    color: var(--text-color);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(45deg, rgba(66, 108, 87, 0.29), rgba(116, 120, 145, 0.31));
+    padding: 20px 40px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+/* BRAND NAME */
+
+
+.brand-logo {
+    font-size: inherit;
+    transition: all .2s ease-in-out;
+
+}
+
+.brand-logo:hover {
+    background-image: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    background-clip: text;
+    opacity: 1;
+}
+
+.brand-text {
+    color: var(--text-color);
+    margin: 0 1px;
+    font-size: inherit;
+    font-weight: 100;
+}
+.brand-text a{
+    text-decoration: none;
+}
+
+.sub-paragraph{
+    color: var(--paragraph-color);
+    font-size: 20px;
+}

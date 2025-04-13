@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clampy - Team Coding</title>
+    <link rel="stylesheet" href="../CSS/main/global.css">    
+    <link rel="stylesheet" href="../CSS/main/main.css">
+    <link rel="stylesheet" href="../CSS/main/navbar-footer/navbar.css">
+    <link rel="stylesheet" href="../CSS/index/landing-section.css">
+    <link rel="stylesheet" href="../CSS/main/animations.css">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script>
+        // Initialize Firebase in compatibility mode
+        const firebaseConfig = {
+            apiKey: "AIzaSyB4U13Kf-PP--im4SI0TER656-jPMS9iQ0",
+            authDomain: "clampy-b04e2.firebaseapp.com",
+            databaseURL: "https://clampy-b04e2-default-rtdb.firebaseio.com",
+            projectId: "clampy-b04e2",
+            storageBucket: "clampy-b04e2.firebasestorage.app",
+            messagingSenderId: "77812734289",
+            appId: "1:77812734289:web:f35835e2d88de31e45db70",
+            measurementId: "G-28MJKFRFS1"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Load room.js as regular script first so addToRoom is available immediately -->
+    <script src="../JAVASCRIPT/room-functions.js"></script>
+</head>
+<body>
+    <script>
+        console.log("Debug: index.html is loading");
+    </script>
+    <clampy-navbar></clampy-navbar>
+    <div class="landing-section-container section-container">
+        <div class="landing-section section">
+            <div class="landing-section-text-content">
+                <div class="landing-section-logo"><span class="brand-logo gradient-text"><span class="brand-text"><a href="./">Clampy</a></span></span></div>
+                <div class="landing-section-paragraph sub-paragraph">Meet New Coders, Create New Bugs and fix them together</div>
+            </div>
+            <div class="landing-section-buttons-container">
+                <button id="create-team-button" class="button landing-section-button" style="font-size: 20px;" onclick="addToRoom()">Create an awesome team!</button>
+            </div>
+            <div class="ai-container">
+                <input type="text" id="promptInput" placeholder="Ask me anything...">
+                <button id="more" class="button" onclick="askAI(document.getElementById('promptInput').value)">Ask AI</button>
+                <div id="response"></div>
+                <p class="power">E by Gemini</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load module scripts -->
+    <script type="module" src="../JAVASCRIPT/auth-utils.js"></script>
+    <script type="module" src="../JAVASCRIPT/custom-elements.js"></script>
+    
+    <!-- Load Google AI SDK via CDN -->
+    <script type="module">
+        import { GoogleGenerativeAI } from 'https://cdn.skypack.dev/@google/generative-ai';
+        window.GoogleGenerativeAI = GoogleGenerativeAI;
+    </script>
+    
+    <!-- Load our AI script -->
+    <script src="../JAVASCRIPT/ai.js"></script>
+
+    <!-- Room management -->
+    <script type="module" src="../JAVASCRIPT/room.js"></script>
+    <script type="module" src="../JAVASCRIPT/room-manager.js"></script>
+    <script type="module" src="../JAVASCRIPT/room-functions.js"></script>
+
+    <script>
+        console.log("Debug: All scripts loaded");
+    </script>
+</body>
+</html>
